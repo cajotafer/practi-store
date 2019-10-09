@@ -8,6 +8,7 @@ import { Product } from './product.model';
 })
 export class AppComponent {
   title = 'practi-store';
+  power = 10;
   items = ['carlos', 'Dee', 'Kleyber'];
   products: Product[] = [
     {
@@ -58,5 +59,8 @@ export class AppComponent {
   }
   deleteItem(index: number) {
     this.items.splice(index, 1);
+  }
+  clickProduct(id: number) {
+    console.log(`Producto: ${id}`);
   }
 }
