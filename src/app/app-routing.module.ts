@@ -1,12 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
-import { DemoComponent } from './demo/demo.component';
-import { ProductDetailComponent } from './product-detail/product-detail.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { LayoutComponent } from './layout/layout.component';
 
-import { AdminGuard } from './guards/admin.guard';
+import { AdminGuard } from './admin.guard';
 
 const routes: Routes = [
   {
@@ -16,7 +13,7 @@ const routes: Routes = [
       {
         path: '',
         redirectTo: '/home',
-        pathMatch: 'full'
+        pathMatch: 'full',
       },
       {
         path: 'home',
@@ -25,30 +22,34 @@ const routes: Routes = [
       {
         path: 'products',
         canActivate: [AdminGuard],
-        loadChildren: () => import('./products/products.module').then(m => m.ProductsModule)
+        loadChildren: () => import('./product/product.module').then(m => m.ProductModule)
       },
       {
         path: 'contact',
+        canActivate: [AdminGuard],
         loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule)
       },
       {
-        path: 'products/:id',
-        component: ProductDetailComponent
+        path: 'demo',
+        canActivate: [AdminGuard],
+        loadChildren: () => import('./demo/demo.module').then(m => m.DemoModule)
       },
     ]
   },
   {
-    path: 'demo',
-    component: DemoComponent
+    path: 'admin',
+    loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
   },
   {
     path: '**',
-    component: PageNotFoundComponent
-  },
+    loadChildren: () => import('./page-not-found/page-not-found.module').then(m => m.PageNotFoundModule)
+  }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })],
+  imports: [RouterModule.forRoot(routes, {
+    preloadingStrategy: PreloadAllModules
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

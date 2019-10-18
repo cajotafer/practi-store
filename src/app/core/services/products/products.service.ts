@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Product } from '../../../product.model';
+
+import { Product } from './../../models/product.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductsService {
+
   products: Product[] = [
     {
       id: '1',
@@ -17,35 +19,35 @@ export class ProductsService {
       id: '2',
       image: 'assets/images/hoodie.png',
       title: 'Hoodie',
-      price: 90000,
+      price: 80000,
       description: 'bla bla bla bla bla'
     },
     {
       id: '3',
       image: 'assets/images/mug.png',
       title: 'Mug',
-      price: 40000,
+      price: 80000,
       description: 'bla bla bla bla bla'
     },
     {
       id: '4',
       image: 'assets/images/pin.png',
       title: 'Pin',
-      price: 20000,
+      price: 80000,
       description: 'bla bla bla bla bla'
     },
     {
       id: '5',
       image: 'assets/images/stickers1.png',
       title: 'Stickers',
-      price: 30000,
+      price: 80000,
       description: 'bla bla bla bla bla'
     },
     {
       id: '6',
       image: 'assets/images/stickers2.png',
       title: 'Stickers',
-      price: 30000,
+      price: 80000,
       description: 'bla bla bla bla bla'
     },
   ];
