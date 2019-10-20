@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { LayoutModule } from '@angular/cdk/layout';
+
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
@@ -11,12 +13,17 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { MatTableModule } from '@angular/material/table';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatGridListModule } from '@angular/material/grid-list';
+
 
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
+    LayoutModule,
     MatButtonModule,
     MatToolbarModule,
     MatIconModule,
@@ -26,7 +33,10 @@ import { MatListModule } from '@angular/material/list';
     MatSelectModule,
     MatRadioModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatTableModule,
+    MatMenuModule,
+    MatGridListModule
   ],
   exports: [
     MatButtonModule,
@@ -38,7 +48,10 @@ import { MatListModule } from '@angular/material/list';
     MatSelectModule,
     MatRadioModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatTableModule,
+    MatMenuModule,
+    MatGridListModule
   ]
 })
 export class MaterialModule { }
