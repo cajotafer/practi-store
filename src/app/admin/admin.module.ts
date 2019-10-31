@@ -9,9 +9,21 @@ import { ProductFormComponent } from './components/product-form/product-form.com
 import { NavComponent } from './components/nav/nav.component';
 import { ProductsListComponent } from './components/products-list/products-list.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { CreateProductComponent } from './components/create-product/create-product.component';
+import { LoginComponent } from './components/login/login.component';
+import { EditProductComponent } from './components/edit-product/edit-product.component';
+
 
 @NgModule({
-  declarations: [ProductFormComponent, NavComponent, ProductsListComponent, DashboardComponent],
+  declarations: [
+    ProductFormComponent,
+    NavComponent,
+    ProductsListComponent,
+    DashboardComponent,
+    CreateProductComponent,
+    LoginComponent,
+    EditProductComponent
+  ],
   imports: [
     CommonModule,
     AdminRoutingModule,

@@ -1,0 +1,29 @@
+<form [formGroup]='form' (ngSubmit)="login($event)">
+    <mat-card class="mat-elevation-z8">
+        <mat-card-header>
+            <mat-card-title>Login</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field>
+                        <input formControlName='email' matInput placeholder="example@email.com" type="email">
+                        <mat-error *ngIf="form.get('email').hasError('email')">
+                            You must introduce a valid email.
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field>
+                        <input formControlName='password' matInput placeholder="Password" type="password">
+                    </mat-form-field>
+                </div>
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button [disabled]="form.invalid" mat-raised-button type="submit">Login</button>
+        </mat-card-actions>
+    </mat-card>
+</form>
